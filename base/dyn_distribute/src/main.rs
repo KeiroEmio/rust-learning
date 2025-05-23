@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 trait Animal {
     fn speak(&self);
 }
@@ -24,5 +25,5 @@ fn main() {
     for animal in animals.iter() {
         animal.speak(); // 动态分发，根据具体类型调用不同的实现
     }
-make_speak(dog);
+make_speak(&*animals[0]);
 }
